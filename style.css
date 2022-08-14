@@ -1,0 +1,14 @@
+body {
+    background: rgba(0, 0, 0, 1);
+}
+
+div {
+    width: 85%;
+    margin: 3% auto;
+}
+
+canvas {
+    border-radius: 0%;
+    padding: 2%;
+    width: 28%;
+}
