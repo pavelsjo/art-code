@@ -36,7 +36,28 @@ const drawRectang = ({context, w = 100, h = 100, degrees = -45, fill = 'blue', s
     context.stroke();
     
     context.restore();
+};
 
+const createRandomRectang = ({quantity = 100, width, height, degrees = -30, color = 'blue'}) => {
+    
+    const rectangs = [];
+    
+    for(let i = 0; i < quantity; i++) {
+        
+        // params
+        const x = random(0, width);
+        const y = random(0, height);
+        const w = random(300, width);
+        const h = random(10, 200);
+        
+        const fill = randomRGBA(color);
+        const stroke = randomRGBA(color);
+        const blend = (Math.random() > 0.8) ? 'overlay' : 'source-over';
+
+        rectangs.push({x, y, w, h, degrees, fill, stroke, blend});
+    };
+
+    return rectangs;
 };
 
 const sketch = (color) => {
@@ -46,29 +67,12 @@ const sketch = (color) => {
         context.fillStyle = randomRGBA(color);
         context.fillRect(0, 0, width, height);
 
-        // draw
-        const cant_rects = 40;
-        const rects = [];
-        
-        for(let i = 0; i < cant_rects; i++) {
-    
-            // params
-            const x = random(0, width);
-            const y = random(0, height);
-            const w = random(600, width);
-            const h = random(40, 200);
-            const degrees = -30;
-            
-            const fill = randomRGBA(color);
-            const stroke = randomRGBA(color);
-            const blend = (Math.random() > 0.5) ? 'overlay' : 'source-over';
-            rects.push({x, y, w, h, degrees, fill, stroke});
-        };
-        rects.forEach(rect => {
+        // draw rectangs
+        const rectangs = createRandomRectang({quantity : 30, width, height, color, degrees:-45});
+        rectangs.forEach(rectang => {
 
-            const {x, y, w, h, degrees, fill, stroke, blend} = rect;
+            const {x, y, w, h, degrees, fill, stroke, blend} = rectang;
 
-            // draw block
             context.save();
             context.translate(x, y);
             drawRectang({context, w, h, degrees, fill, stroke, blend});
