@@ -1,5 +1,9 @@
 const canvas = document.querySelectorAll('canvas');
 
+const settings = {
+    dimensions: [540, 1080]
+};
+
 const drawRectang = ({context, w = 100, h = 100, degrees = -45, fill = 'blue', stroke = 'black', blend='source-over'}) => {
     
     const radius =  w;
@@ -45,10 +49,10 @@ const createRandomRectang = ({quantity = 100, width, height, degrees = -30, colo
     for(let i = 0; i < quantity; i++) {
         
         // params
-        const x = random(0, width);
-        const y = random(0, height);
-        const w = random(300, width);
-        const h = random(10, 200);
+        const x = randomRange(0, width);
+        const y = randomRange(0, height);
+        const w = randomRange(300, width);
+        const h = randomRange(10, 200);
         
         const fill = randomRGBA(color);
         const stroke = randomRGBA(color);
@@ -81,6 +85,7 @@ const sketch = (color) => {
     };
 };
 
-canvasSketch(sketch('blue'),  canvas[0], settings = {width: 540, height: 1080});
-canvasSketch(sketch('red'),   canvas[1], settings = {width: 540, height: 1080});
-canvasSketch(sketch('green'), canvas[2], settings = {width: 540, height: 1080});
+// Art Gallery
+canvasSketch(sketch('blue'),  canvas[0], settings);
+canvasSketch(sketch('red'),   canvas[1], settings);
+canvasSketch(sketch('green'), canvas[2], settings);
