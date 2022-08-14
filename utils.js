@@ -4,10 +4,10 @@ const radiansToDegrees = radians => (radians * 180) / Math.PI;
 
 // randomize
 const RNG = (seed) => {
-    var m_as_number = 2**53 - 111
-    var m = 2n**53n - 111n
-    var a = 5667072534355537n
-    var s = BigInt(seed) % m
+    let m_as_number = 2**53 - 111
+    let m = 2n**53n - 111n
+    let a = 5667072534355537n
+    let s = BigInt(seed) % m
     return () => {
         return Number(s = s * a % m) / m_as_number
     }
