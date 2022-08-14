@@ -14,9 +14,20 @@ const RNG = (seed) => {
 };
 
 const setSeed = (seed) => {
-    const seedValue = seed ? seed : Date.now();
+    const seedValue = seed ? seedConvertion(seed) : Date.now();
     Math.random = RNG(seedValue);
 };
+
+const seedConvertion = (seed) => {
+    let seedNum = 0;
+
+    for(let letter of String(seed)) {
+        const num = letter.charCodeAt()
+        seedNum += num
+    };
+
+    return seedNum;
+}
 
 const randomRange = (min = 0, max) => {
     

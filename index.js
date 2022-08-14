@@ -1,5 +1,6 @@
 const canvas = document.querySelectorAll('canvas');
 
+const seed = 'pavelsjo';
 const settings = {
     dimensions: [540, 1080]
 };
@@ -48,12 +49,11 @@ const createRandomRectang = ({quantity = 100, width, height, degrees = -30, colo
     
     for(let i = 0; i < quantity; i++) {
         
-        // params
+        // parameters
         const x = randomRange(0, width);
         const y = randomRange(0, height);
         const w = randomRange(300, width);
         const h = randomRange(10, 200);
-        
         const fill = randomRGBA(color);
         const stroke = randomRGBA(color);
         const blend = (Math.random() > 0.8) ? 'overlay' : 'source-over';
@@ -65,6 +65,9 @@ const createRandomRectang = ({quantity = 100, width, height, degrees = -30, colo
 };
 
 const sketch = (color) => {
+
+    // seed
+    setSeed(seed);    
     
     return ({width, height, context}) => {
         // background
@@ -85,7 +88,7 @@ const sketch = (color) => {
     };
 };
 
-// Art Gallery
+// gallery art
 canvasSketch(sketch('blue'),  canvas[0], settings);
 canvasSketch(sketch('red'),   canvas[1], settings);
 canvasSketch(sketch('green'), canvas[2], settings);
