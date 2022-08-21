@@ -1,14 +1,38 @@
 body {
-    background: rgba(0, 0, 0, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
 }
-
-div {
-    width: 85%;
-    margin: 3% auto;
+header {
+    background: black;
+    padding: 1%;
+    text-align: center;
+    position:fixed;    
+    width: 100%;
+    z-index: 1;
 }
-
-canvas {
-    border-radius: 0%;
-    padding: 2%;
-    width: 28%;
+header h1 {
+    font-size: 3em;
+    padding: 1%;
+    color: white; 
+    border: 6px solid white;   
+    margin: 0;
+    display: inline-block;
+}
+.banner {
+    position: relative;
+}
+.banner canvas {
+    width: 100%;
+    max-height: 1040px;
+}
+.banner h2 {
+    color: white;
+    background: rgba(94, 61, 61, 0.299);
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 5%;
 }
