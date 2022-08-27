@@ -1,2 +1,3 @@
 # art-code
-Drawing canvas with Javascript 
+
+It is an exploratory over canvas using only code to draw and build styles over random, grids, technique.
