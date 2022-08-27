@@ -109,7 +109,7 @@ const sketch = (color) => {
         context.fillRect(0, 0, width, height);
 
         // draw rectangs
-        const rectangs = createRandomRectang({quantity : 25, width, height, color, degrees: 0});
+        const rectangs = createRandomRectang({quantity : 250, width, height, color, degrees: angle});
         rectangs.forEach(rectang => {
 
             const {x, y, w, h, degrees, fill, stroke, blend} = rectang;

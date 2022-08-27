@@ -1,27 +1,63 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Art Code</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Code</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- header -->
-    <header>
-        <h1>Art Code</h1>
-    </header>
-
-    <!-- banner -->
-    <section class="banner">
-        <canvas id="blue"></canvas>
+  <main>
+    <div class="panel welcome">
+      <nav>
+        <a href="/">Art Code</a>
+        <a href="https://github.com/pavelsjo" target="_blank">About Me</a>
+      </nav>
+      <div>
+        <h1>Random Beauty</h1>
+        <p>Quasi chaotic status is exciting, you really don't know what can happens, but...</p>
+      </div>
+      <footer>
+        <form class="intue">
+            <input type="range" name="range" id="range">
+        </form>
+        <p>You can Intue...</p>
+      </footer>
+    </div>
+    <div class="panel about">
+      <canvas id="blue"></canvas>
+      <div class="text">
         <h2>Random Blue</h2>
-    </section>
-    
-    <!-- scripts -->
-    <script src="./assets/utils.js"></script>
-    <script src="./assets/sketch.js"></script>
-    <script src="./assets/index.js"></script>
-
+        <form class="unique">
+            <input type="text" name="unique" id="unique" placeholder="something...">
+            <p>A seed unique for you.</p>
+          </form>
+      </div>
+    </div>
+    <div class="panel photos">
+      <div class="text">
+        <h2>Mutate Red</h2>
+        <form class="mutate">
+            <input type="button" value="yellow">
+          </form>
+      </div>
+      <canvas id="red"></canvas>
+    </div>
+    <div class="panel about">
+        <canvas id="green"></canvas>
+        <div class="text">
+          <h2>Green Motion</h2>
+          <form class="move">
+            <input type="button" value="do">
+            <input type="button" value="redo">
+          </form>
+        </div>
+    </div>
+  </main>
+  
+  <!-- scripts -->
+  <script src="./assets/utils.js"></script>
+  <script src="./assets/sketch.js"></script>
+  <script src="./assets/index.js"></script>
 </body>
 </html>
